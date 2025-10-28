@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khyla G. Albaracin - Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            scroll-behavior: smooth; 
+        }
+        .header {
+            background-color: #fff;
+            padding: 15px 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed; 
+            width: 100%;
+            top: 0;
+            z-index: 1000; 
+        }
+        .header .logo {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+        .header nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s; 
+        }
+        .header nav a:hover {
+            color: #007bff; 
+        }
+        .hero-section {
+            padding-top: 80px; 
+            background-color: #e0f2f7; 
+            padding-bottom: 60px;
+            padding-left: 20px;
+            padding-right: 20px;
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            flex-wrap: wrap; 
+            gap: 40px; 
+        }
+        .hero-content {
+            flex: 1; 
+            min-width: 300px; 
+            max-width: 500px; 
+        }
+        .hero-content h1 {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            color: #2c3e50; 
+        }
+        .hero-content p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        .hero-content .explore-button {
+            background-color: #007bff; 
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            text-decoration: none;
+            display: inline-block; 
+            transition: background-color 0.3s;
+        }
+        .hero-content .explore-button:hover {
+            background-color: #0056b3;
+        }
+        
+
+        .hero-photo-container {
+            flex: 1; 
+            min-width: 300px; 
+            max-width: 400px; 
+            height: 300px; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            overflow: hidden; 
+        }
+        
+        .hero-photo-container img {
+            width: 100%;
+            height: 150%;
+            object-fit: cover;
+            display: block;
+        }
+        
+
+
+        
+        .main-section {
+            background-color: #fff;
+            padding: 40px 20px;
+            margin: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .main-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #2c3e50;
+        }
+
+        /* About section styles (for display purposes) */
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: space-around;
+        }
+        .about-text, .about-details {
+            flex: 1;
+            min-width: 280px;
+            max-width: 45%;
+        }
+        .about-details ul {
+            list-style: none;
+            padding: 0;
+        }
+        .about-details h3 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+
+    
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        .skill-card {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .skill-card h3 {
+            color: #007bff;
+            margin-bottom: 10px;
+        }
+        
+        /* Hobbies Section */
+        .hobbies-grid {
+            display: flex;
+            justify-content: center; 
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .hobby-card {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+            flex-basis: 30%; 
+            min-width: 250px;
+            text-align: center;
+        }
+        .hobby-card img {
+            width: 80%;
+            height: 250px; 
+            object-fit: cover; 
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+        .hobby-card h3 {
+            color: #007bff;
+            margin-top: 0;
+        }
+        
+        
+        .contact-details {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+        .contact-details a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .contact-details a:hover {
+            text-decoration: underline;
+        }
+        
+        .contact-form-table {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .message-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0 10px; 
+        }
+        .message-table td:first-child {
+            font-weight: bold;
+            padding-right: 15px;
+            vertical-align: top;
+            width: 120px; 
+        }
+        .message-table input[type="text"],
+        .message-table input[type="email"],
+        .message-table textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box; 
+            resize: vertical; 
+        }
+        .send-button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        .send-button:hover {
+            background-color: #0056b3;
+        }
+        .form-note {
+            font-size: 0.8em;
+            color: #777;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">KHYLA G. ALBARACIN</div>
+        <nav>
+            <a href="#about">ABOUT</a>
+            <a href="#skills">SKILLS</a>
+            <a href="#hobbies">HOBBIES</a>
+            <a href="#contact">CONTACT</a>
+            <a href="#">🤍🤍</a>
+        </nav>
+    </div>
+
+    <section class="hero-section" id="home">
+        <div class="hero-content">
+            <h1>EXPLORE AND KNOW MORE ABOUT ME!</h1>
+            <p>Hi, I'm Khyla Albaracin, a Second Year BSIT student of Central Philippines State University, Moises Padilla Campus.</p>
+            <a href="#about" class="explore-button">EXPLORE MORE</a>
+        </div>
+        
+        <div class="hero-photo-container">
+            <img src="/Photoroom-20250119_000427.png" alt="Khyla Albaracin Professional Photo">
+        </div>
+    </section>
+    <br>
+    </br>
+
+    <section class="main-section about-section" id="about">
+        <h2>ABOUT ME</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>As a hardworking 2nd-year Information Technology student at CPSU-Moises Padilla Campus, I am always eager to deepen my knowledge in web development and software tools. I am committed to advancing my practical skills, especially in areas like HTML and database management, to prepare for a successful career. This drive fuels my dedication to consistently seek out new projects and opportunities for growth in the tech field.</p>
+            </div>
+            <div class="about-details">
+                <h3>Educational Focus</h3>
+                <ul>
+                    <li>• Focusing on Web Development and Database Management.</li>
+                    <li>• Passionate about Information Technology.</li>
+                    <li>• Maintaining standing at CPSU-Moises Padilla Campus.</li>
+                </ul>
+                <h3>Personal Growth</h3>
+                <ul>
+                    <li>• Always seeking new opportunities to learn and collaborate on challenging projects to enhance practical skills.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+<br>
+</br>
+
+    <section class="hero-section skills-section" id="skills">
+        <h2>SKILLS</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <h3>Web Basics</h3>
+                <p>Proficient in HTML5, CSS3, and foundational JavaScript for responsive website designs.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Programming</h3>
+                <p>Familiar with basic programming concepts in languages like JavaScript and C++.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Software Tools</h3>
+                <p>Experienced with Microsoft Office Suite (Word, Excel, PowerPoint).</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="main-section" id="hobbies">
+        <h2>HOBBIES</h2>
+        
+        <div class="skills-grid">
+            
+            <div class="hobby-card">
+                <h3>Baking 🧁</h3>
+                <img src="/1761394343182.jpg" loading="lazy">
+                <p>I find joy in the process of baking, from measuring ingredients to the smell of fresh bread or cookies coming out of the oven. It's my go-to stress reliever.</p>
+            </div>
+            
+            <div class="hobby-card">
+                <h3>Singing 🎤</h3>
+                <img src="/Photoroom-20240702_150519.png" alt="Picture of a person singing into a microphone" loading="lazy">
+                <p>Whether in a choir or just casually at home, singing is a passion that allows me to express myself and appreciate music deeply.</p>
+            </div>
+            
+            <div class="hobby-card">
+                <h3>Exploring 🤠</h3>
+                <img src="/1712671418129.jpg" alt="Picture of various place that i have been" loading="lazy">
+                <p>Exploring different to go is a hobby. I love going to new places feel the joy whenever we do rides.</p>
+            </div>
+        </div>
+    </section>
+    
+    <br>
+        
+    </br>
+    
+    <section class="main-section" id="contact">
+        <h2>CONTACT ME</h2>
+        
+        <div class="contact-details">
+            <p>I'm always open to new projects, collaborations, or just a friendly chat. You can reach me directly via:</p>
+            <p>Email: <a href="mailto:khylaalbaracin1@gmail.com">khylaalbaracin1@gmail.com</a> </p>
+            <p>Phone:<a href="09633259661">     09633259661</a> </p>
+        </div>
+
+        <h2 style="text-align: center; margin-top: 80px; color: #2c3e50;">Send Me a Message</h2>
+        
+        <form action="#" method="POST" class="contact-form-table">
+            <table class="message-table">
+                <tr>
+                    <td><label for="name">Your Name:</label></td>
+                    <td><input type="text" id="name" name="name" required></td>
+                </tr>
+                <tr>
+                    <td><label for="email">Your Email:</label></td>
+                    <td><input type="email" id="email" name="email" required></td>
+                </tr>
+                <tr>
+                    <td><label for="subject">Subject:</label></td>
+                    <td><input type="text" id="subject" name="subject"></td>
+                </tr>
+                <tr>
+                    <td><label for="message">Message:</label></td>
+                    <td><textarea id="message" name="message" rows="5" required></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: right;">
+                        <button type="submit" class="send-button">Send Message</button>
+                    </td>
+                </tr>
+            </table>
+          
+        </form>
+    </section>
+    
+</body>
+</html>
