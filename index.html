@@ -114,7 +114,7 @@
             color: #2c3e50;
         }
 
-        /* About section styles (for display purposes) */
+        
         .about-content {
             display: flex;
             flex-wrap: wrap;
@@ -153,9 +153,45 @@
             color: #007bff;
             margin-bottom: 10px;
         }
+
         
-        /* Hobbies Section */
-        .hobbies-grid {
+        .video-card {
+            background-color: #f9f9f9;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.1);
+            flex-basis: 30%; 
+            min-width: 250px;
+            text-align: center;
+        }
+        .video-card a {
+            text-decoration: none;
+            color: #007bff;
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+        .video-card a:hover {
+            text-decoration: underline;
+        }
+        .video-card .video-thumbnail {
+            width: 100%;
+            height: 150px; 
+            background-color: #ccc; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-size: 0.9em;
+            color: #555;
+            overflow: hidden;
+            position: relative;
+        }
+
+        
+        
+        .hobbies-grid, .video-grid { 
             display: flex;
             justify-content: center; 
             gap: 30px;
@@ -174,7 +210,7 @@
         }
         .hobby-card img {
             width: 80%;
-            height: 250px; 
+            height: 200px; 
             object-fit: cover; 
             border-radius: 5px;
             margin: 10px 0;
@@ -247,6 +283,27 @@
             text-align: center;
             margin-top: 10px;
         }
+
+        
+        .skills-link {
+            text-align: center;
+            margin-top: 20px;
+            padding-bottom: 20px;
+        }
+        .skills-link a {
+            background-color: #2c3e50; 
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            display: inline-block;
+        }
+        .skills-link a:hover {
+            background-color: #34495e;
+        }
+
     </style>
 </head>
 <body>
@@ -256,7 +313,7 @@
         <nav>
             <a href="#about">ABOUT</a>
             <a href="#skills">SKILLS</a>
-            <a href="#hobbies">HOBBIES</a>
+            <a href="#projects">PROJECTS</a> <a href="#hobbies">HOBBIES</a>
             <a href="#contact">CONTACT</a>
             <a href="#">🤍🤍</a>
         </nav>
@@ -270,7 +327,7 @@
         </div>
         
         <div class="hero-photo-container">
-            <img src="Photoroom-20250119_000427.png" alt="Khyla Albaracin Professional Photo">
+            <img src="/Photoroom-20250119_000427.png" alt="Khyla Albaracin Professional Photo">
         </div>
     </section>
     <br>
@@ -316,28 +373,55 @@
                 <p>Experienced with Microsoft Office Suite (Word, Excel, PowerPoint).</p>
             </div>
         </div>
+        
+
     </section>
+    
+    <br>
+    </br>
+
+    <section class="main-section" id="projects">
+        <h2> TUTORIALS</h2>
+        <div class="video-grid">
+            
+            <div class="video-card">
+
+                <h3>MAYBE THIS TIME</h3>
+<iframe src="https://youtube.com/embed/1Q8KI5_wmRk?si=XUQ0Cq06rJqeleA6"></iframe>
+            </div>
+            <div class="video-card">
+                <h3>NANDITO AKO</h3>
+<iframe src="https://youtube.com/embed/8zIJuhNxWZE?si=Xqwe7TfhfEfNylPI"></iframe>
+            </div>
+            
+            <div class="video-card">
+                <h3>I'LL BE</h3>  
+<iframe src="https://youtube.com/embed/IRMmpzCsyWA?si=CX2zJYMN_yJNNn9Q">
+</iframe></div>
+
+        </div>
+    </section>
+    <br>
+    </br>
     
     <section class="main-section" id="hobbies">
         <h2>HOBBIES</h2>
         
-        <div class="skills-grid">
-            
-            <div class="hobby-card">
+        <div class="hobbies-grid"> <div class="hobby-card">
                 <h3>Baking 🧁</h3>
-                <img src="1761394343182.jpg" loading="lazy">
+                <img src="/1761394343182.jpg" loading="lazy">
                 <p>I find joy in the process of baking, from measuring ingredients to the smell of fresh bread or cookies coming out of the oven. It's my go-to stress reliever.</p>
             </div>
             
             <div class="hobby-card">
                 <h3>Singing 🎤</h3>
-                <img src="Photoroom-20240702_150519.png" alt="Picture of a person singing into a microphone" loading="lazy">
+                <img src="/Photoroom-20240702_150519.png" alt="Picture of a person singing into a microphone" loading="lazy">
                 <p>Whether in a choir or just casually at home, singing is a passion that allows me to express myself and appreciate music deeply.</p>
             </div>
             
             <div class="hobby-card">
                 <h3>Exploring 🤠</h3>
-                <img src="1712671418129.jpg" alt="Picture of various place that i have been" loading="lazy">
+                <img src="/1712671418129.jpg" alt="Picture of various place that i have been" loading="lazy">
                 <p>Exploring different to go is a hobby. I love going to new places feel the joy whenever we do rides.</p>
             </div>
         </div>
@@ -387,4 +471,6 @@
     </section>
     
 </body>
-</html>
+    </html>
+
+                
