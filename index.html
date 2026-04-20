@@ -38,7 +38,7 @@
             color: #007bff; 
         }
         .hero-section {
-            padding-top: 80px; 
+            padding-top: 100px; 
             background-color: #e0f2f7; 
             padding-bottom: 60px;
             padding-left: 20px;
@@ -80,7 +80,6 @@
             background-color: #0056b3;
         }
         
-
         .hero-photo-container {
             flex: 1; 
             min-width: 300px; 
@@ -98,9 +97,6 @@
             display: block;
         }
         
-
-
-        
         .main-section {
             background-color: #fff;
             padding: 40px 20px;
@@ -114,7 +110,6 @@
             color: #2c3e50;
         }
 
-        
         .about-content {
             display: flex;
             flex-wrap: wrap;
@@ -135,7 +130,6 @@
             margin-bottom: 10px;
         }
 
-    
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -154,43 +148,21 @@
             margin-bottom: 10px;
         }
 
-        
         .video-card {
             background-color: #f9f9f9;
-            padding: 50px;
+            padding: 20px;
             border-radius: 20px;
             box-shadow: 0 1px 5px rgba(0,0,0,0.1);
             flex-basis: 30%; 
             min-width: 250px;
             text-align: center;
         }
-        .video-card a {
-            text-decoration: none;
-            color: #007bff;
-            font-weight: bold;
-            display: block;
-            margin-top: 10px;
-        }
-        .video-card a:hover {
-            text-decoration: underline;
-        }
-        .video-card .video-thumbnail {
+        .video-card iframe {
             width: 100%;
-            height: 150px; 
-            background-color: #ccc; 
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 5px;
-            margin: 10px 0;
-            font-size: 0.9em;
-            color: #555;
-            overflow: hidden;
-            position: relative;
+            border-radius: 10px;
+            border: none;
         }
 
-        
-        
         .hobbies-grid, .video-grid { 
             display: flex;
             justify-content: center; 
@@ -215,11 +187,6 @@
             border-radius: 5px;
             margin: 10px 0;
         }
-        .hobby-card h3 {
-            color: #007bff;
-            margin-top: 0;
-        }
-        
         
         .contact-details {
             text-align: center;
@@ -230,9 +197,6 @@
             color: #007bff;
             text-decoration: none;
             font-weight: bold;
-        }
-        .contact-details a:hover {
-            text-decoration: underline;
         }
         
         .contact-form-table {
@@ -248,21 +212,11 @@
             border-collapse: separate;
             border-spacing: 0 10px; 
         }
-        .message-table td:first-child {
-            font-weight: bold;
-            padding-right: 15px;
-            vertical-align: top;
-            width: 120px; 
-        }
-        .message-table input[type="text"],
-        .message-table input[type="email"],
-        .message-table textarea {
+        .message-table input, .message-table textarea {
             width: 100%;
             padding: 10px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            box-sizing: border-box; 
-            resize: vertical; 
         }
         .send-button {
             background-color: #007bff;
@@ -271,39 +225,57 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 1em;
-            transition: background-color 0.3s;
-        }
-        .send-button:hover {
-            background-color: #0056b3;
-        }
-        .form-note {
-            font-size: 0.8em;
-            color: #777;
-            text-align: center;
-            margin-top: 10px;
         }
 
-        
-        .skills-link {
-            text-align: center;
-            margin-top: 20px;
-            padding-bottom: 20px;
+        /* --- CHATBOT STYLES --- */
+        #chat-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 300px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            z-index: 2000;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
         }
-        .skills-link a {
-            background-color: #2c3e50; 
+        #chat-header {
+            background: #007bff;
             color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
+            padding: 10px;
             font-weight: bold;
-            transition: background-color 0.3s;
-            display: inline-block;
+            display: flex;
+            justify-content: space-between;
         }
-        .skills-link a:hover {
-            background-color: #34495e;
+        #chat-body {
+            height: 250px;
+            overflow-y: auto;
+            padding: 10px;
+            font-size: 0.9em;
+            background: #f9f9f9;
         }
-
+        #chat-input-area {
+            display: flex;
+            border-top: 1px solid #eee;
+        }
+        #chat-input-area input {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            outline: none;
+        }
+        #chat-input-area button {
+            padding: 10px;
+            background: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .bot-msg { color: #0056b3; margin-bottom: 8px; }
+        .user-msg { color: #333; text-align: right; margin-bottom: 8px; font-style: italic; }
     </style>
 </head>
 <body>
@@ -313,9 +285,9 @@
         <nav>
             <a href="#about">ABOUT</a>
             <a href="#skills">SKILLS</a>
-            <a href="#projects">PROJECTS</a> <a href="#hobbies">HOBBIES</a>
+            <a href="#projects">PROJECTS</a> 
+            <a href="#hobbies">HOBBIES</a>
             <a href="#contact">CONTACT</a>
-            <a href="#">🤍🤍</a>
         </nav>
     </div>
 
@@ -323,160 +295,125 @@
         <div class="hero-content">
             <h1>EXPLORE AND KNOW MORE ABOUT ME!</h1>
             <p>Hi, I'm Khyla Albaracin, a Second Year BSIT student of Central Philippines State University, Moises Padilla Campus.</p>
-        
-    <a href="https://drive.google.com/file/d/1Db0eb3TRYHFGw_3HUi6x_EpPSOiS1ABO/view?usp=drivesdk" download="Khyla_Albaracin_CV.docx" class="explore-button">
-        DOWNLOAD CV 
-    </a>
-            </div>
-            
-            
+            <a href="#" class="explore-button">DOWNLOAD CV</a>
         </div>
-        
         <div class="hero-photo-container">
             <img src="Photoroom-20250119_000427.png" alt="Khyla Albaracin Professional Photo">
         </div>
     </section>
-    <br>
-    </br>
 
     <section class="main-section about-section" id="about">
         <h2>ABOUT ME</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>As a hardworking 2nd-year Information Technology student at CPSU-Moises Padilla Campus, I am always eager to deepen my knowledge in web development and software tools. I am committed to advancing my practical skills, especially in areas like HTML and database management, to prepare for a successful career. This drive fuels my dedication to consistently seek out new projects and opportunities for growth in the tech field.</p>
+                <p>As a hardworking 2nd-year Information Technology student at CPSU-Moises Padilla Campus, I am always eager to deepen my knowledge in web development and software tools.</p>
             </div>
             <div class="about-details">
                 <h3>Educational Focus</h3>
                 <ul>
                     <li>• Focusing on Web Development and Database Management.</li>
-                    <li>• Passionate about Information Technology.</li>
                     <li>• Maintaining standing at CPSU-Moises Padilla Campus.</li>
                 </ul>
-                <h3>Personal Growth</h3>
-                <ul>
-                    <li>• Always seeking new opportunities to learn and collaborate on challenging projects to enhance practical skills.</li>
-                </ul>
             </div>
         </div>
     </section>
 
-<br>
-</br>
-
-    <section class="hero-section skills-section" id="skills">
+    <section class="main-section" id="skills">
         <h2>SKILLS</h2>
         <div class="skills-grid">
-            <div class="skill-card">
-                <h3>Web Basics</h3>
-                <p>Proficient in HTML5, CSS3, and foundational JavaScript for responsive website designs.</p>
-            </div>
-            <div class="skill-card">
-                <h3>Programming</h3>
-                <p>Familiar with basic programming concepts in languages like JavaScript and C++.</p>
-            </div>
-            <div class="skill-card">
-                <h3>Software Tools</h3>
-                <p>Experienced with Microsoft Office Suite (Word, Excel, PowerPoint).</p>
-            </div>
+            <div class="skill-card"><h3>Web Basics</h3><p>HTML5, CSS3, JavaScript.</p></div>
+            <div class="skill-card"><h3>Programming</h3><p>JavaScript and C++.</p></div>
+            <div class="skill-card"><h3>Software Tools</h3><p>Microsoft Office Suite.</p></div>
         </div>
-        
-
     </section>
-    
-    <br>
-    </br>
 
     <section class="main-section" id="projects">
-        <h2> TUTORIALS</h2>
+        <h2>TUTORIALS</h2>
         <div class="video-grid">
-            
             <div class="video-card">
-
-                <h3>TIMETUNE SCHEDULER TUTORIAL</h3>
-<iframe src="https://youtube.com/embed/Bo4wog0Ongk?si=wV-OLpQOachcDKrY"></iframe>
+                <h3>TIMETUNE SCHEDULER</h3>
+                <iframe src="https://youtube.com/embed/Bo4wog0Ongk?si=wV-OLpQOachcDKrY"></iframe>
             </div>
             <div class="video-card">
                 <h3>CANVA TUTORIAL</h3>
-<iframe src="https://youtube.com/embed/op_0wsxDLvw?feature=shared"></iframe>
+                <iframe src="https://youtube.com/embed/op_0wsxDLvw?feature=shared"></iframe>
             </div>
-            
             <div class="video-card">
                 <h3>POWERPOINT TUTORIAL</h3>  
-<iframe src="https://youtube.com/embed/wk6M6tkLl6I?feature=shared">
-</iframe></div>
-
+                <iframe src="https://youtube.com/embed/wk6M6tkLl6I?feature=shared"></iframe>
+            </div>
         </div>
     </section>
-    <br>
-    </br>
-    
+
     <section class="main-section" id="hobbies">
         <h2>HOBBIES</h2>
-        
-        <div class="hobbies-grid"> <div class="hobby-card">
-                <h3>Baking 🧁</h3>
-                <img src="1761394343182.jpg" loading="lazy">
-                <p>I find joy in the process of baking, from measuring ingredients to the smell of fresh bread or cookies coming out of the oven. It's my go-to stress reliever.</p>
-            </div>
-            
-            <div class="hobby-card">
-                <h3>Singing 🎤</h3>
-                <img src="Photoroom-20240702_150519.png" alt="Picture of a person singing into a microphone" loading="lazy">
-                <p>Whether in a choir or just casually at home, singing is a passion that allows me to express myself and appreciate music deeply.</p>
-            </div>
-            
-            <div class="hobby-card">
-                <h3>Exploring 🤠</h3>
-                <img src="1712671418129.jpg" alt="Picture of various place that i have been" loading="lazy">
-                <p>Exploring different to go is a hobby. I love going to new places feel the joy whenever we do rides.</p>
-            </div>
+        <div class="hobbies-grid"> 
+            <div class="hobby-card"><h3>Baking 🧁</h3><p>My go-to stress reliever.</p></div>
+            <div class="hobby-card"><h3>Singing 🎤</h3><p>A passion for expression.</p></div>
+            <div class="hobby-card"><h3>Exploring 🤠</h3><p>I love visiting new places.</p></div>
         </div>
     </section>
-    
-    <br>
-        
-    </br>
-    
+
     <section class="main-section" id="contact">
         <h2>CONTACT ME</h2>
-        
         <div class="contact-details">
-            <p>I'm always open to new projects, collaborations, or just a friendly chat. You can reach me directly via:</p>
-            <p>Email: <a href="mailto:khylaalbaracin1@gmail.com">khylaalbaracin1@gmail.com</a> </p>
-            <p>Phone:<a href="09633259661">     09633259661</a> </p>
+            <p>Email: <a href="mailto:khylaalbaracin1@gmail.com">khylaalbaracin1@gmail.com</a></p>
         </div>
-
-        <h2 style="text-align: center; margin-top: 80px; color: #2c3e50;">Send Me a Message</h2>
-        
-        <form action="#" method="POST" class="contact-form-table">
-            <table class="message-table">
-                <tr>
-                    <td><label for="name">Your Name:</label></td>
-                    <td><input type="text" id="name" name="name" required></td>
-                </tr>
-                <tr>
-                    <td><label for="email">Your Email:</label></td>
-                    <td><input type="email" id="email" name="email" required></td>
-                </tr>
-                <tr>
-                    <td><label for="subject">Subject:</label></td>
-                    <td><input type="text" id="subject" name="subject"></td>
-                </tr>
-                <tr>
-                    <td><label for="message">Message:</label></td>
-                    <td><textarea id="message" name="message" rows="5" required></textarea></td>
-                </tr>
-                <tr>
-                    <td colspan="2" style="text-align: right;">
-                        <button type="submit" class="send-button">Send Message</button>
-                    </td>
-                </tr>
-            </table>
-          
-        </form>
     </section>
-    
-</body>
-    </html>
 
-                
+    <div id="chat-widget">
+        <div id="chat-header">Khyla's Assistant <span>online</span></div>
+        <div id="chat-body">
+            <div class="bot-msg"><strong>Bot:</strong> Hello! I am Khyla's AI assistant. How can I help you?</div>
+        </div>
+        <div id="chat-input-area">
+            <input type="text" id="chat-input" placeholder="Ask about Khyla...">
+            <button onclick="handleChat()">Send</button>
+        </div>
+    </div>
+
+    <script>
+        function handleChat() {
+            const input = document.getElementById('chat-input');
+            const body = document.getElementById('chat-body');
+            const val = input.value.trim().toLowerCase();
+
+            if (val === "") return;
+
+            // Add User Message
+            body.innerHTML += `<div class="user-msg"><strong>You:</strong> ${input.value}</div>`;
+            
+            let response = "I'm sorry, I don't have an answer for that yet. Try asking 'Who is the owner?'";
+
+            // AI Logic for Khyla
+            if (val.includes("who are you") || val.includes("about you") || val.includes("who is khyla")) {
+                response = "The owner of this portfolio is Khyla Albaracin. She is an I.T. College Student at Central Philippines State University (CPSU), Moises Padilla Campus.";
+            } else if (val.includes("school") || val.includes("college") || val.includes("campus")) {
+                response = "Khyla studies at Central Philippines State University (CPSU) - Moises Padilla Campus.";
+            } else if (val.includes("skill") || val.includes("what can she do")) {
+                response = "Khyla is skilled in HTML, CSS, JavaScript, and Microsoft Office tools. She's also great at baking and singing!";
+            } else if (val.includes("contact") || val.includes("email")) {
+                response = "You can contact Khyla at khylaalbaracin1@gmail.com.";
+            } else if (val.includes("hi") || val.includes("hello")) {
+                response = "Hi there! Feel free to ask me anything about Khyla's background or skills.";
+            }
+
+            // Add Bot Response
+            setTimeout(() => {
+                body.innerHTML += `<div class="bot-msg"><strong>Bot:</strong> ${response}</div>`;
+                body.scrollTop = body.scrollHeight;
+            }, 500);
+
+            input.value = "";
+        }
+
+        // Allow 'Enter' key to send
+        document.getElementById('chat-input').addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                handleChat();
+            }
+        });
+    </script>
+
+</body>
+</html>
