@@ -80,6 +80,7 @@
             background-color: #0056b3;
         }
         
+
         .hero-photo-container {
             flex: 1; 
             min-width: 300px; 
@@ -273,75 +274,59 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            z-index: 2000;
+            width: 300px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             display: flex;
             flex-direction: column;
-            align-items: flex-end;
-        }
-        #chat-button {
-            background-color: #007bff;
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            border: none;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            cursor: pointer;
-            font-size: 24px;
-            transition: transform 0.3s;
-        }
-        #chat-button:hover { transform: scale(1.1); }
-        
-        #chat-window {
-            width: 300px;
-            height: 400px;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.2);
-            display: none;
-            flex-direction: column;
+            z-index: 2000;
             overflow: hidden;
-            margin-bottom: 10px;
+            font-family: sans-serif;
         }
         #chat-header {
-            background: #2c3e50;
+            background: #007bff;
             color: white;
-            padding: 15px;
+            padding: 10px;
             font-weight: bold;
+            cursor: pointer;
             display: flex;
             justify-content: space-between;
         }
+        #chat-body {
+            height: 300px;
+            display: none;
+            flex-direction: column;
+        }
         #chat-messages {
             flex: 1;
-            padding: 15px;
+            padding: 10px;
             overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
             font-size: 0.9em;
+            background: #f9f9f9;
         }
-        .msg { padding: 8px 12px; border-radius: 15px; max-width: 80%; }
-        .bot-msg { background: #e0f2f7; align-self: flex-start; color: #333; }
-        .user-msg { background: #007bff; color: white; align-self: flex-end; }
-        
+        .msg { margin-bottom: 10px; padding: 8px; border-radius: 5px; max-width: 80%; }
+        .bot-msg { background: #e0f2f7; align-self: flex-start; }
+        .user-msg { background: #007bff; color: white; align-self: flex-end; margin-left: auto; }
         #chat-input-area {
             display: flex;
             border-top: 1px solid #eee;
-            padding: 10px;
-        }
-        #chat-input {
-            flex: 1;
-            border: none;
-            outline: none;
             padding: 5px;
         }
-        #chat-send {
-            background: none;
+        #chat-input-area input {
+            flex: 1;
             border: none;
-            color: #007bff;
-            font-weight: bold;
+            padding: 8px;
+            outline: none;
+        }
+        #chat-input-area button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 0 10px;
             cursor: pointer;
         }
+
     </style>
 </head>
 <body>
@@ -362,7 +347,9 @@
         <div class="hero-content">
             <h1>EXPLORE AND KNOW MORE ABOUT ME!</h1>
             <p>Hi, I'm Khyla Albaracin, a Second Year BSIT student of Central Philippines State University, Moises Padilla Campus.</p>
-            <a href="https://drive.google.com/file/d/1Db0eb3TRYHFGw_3HUi6x_EpPSOiS1ABO/view?usp=drivesdk" download="Khyla_Albaracin_CV.docx" class="explore-button">DOWNLOAD CV</a>
+            <a href="https://drive.google.com/file/d/1Db0eb3TRYHFGw_3HUi6x_EpPSOiS1ABO/view?usp=drivesdk" download="Khyla_Albaracin_CV.docx" class="explore-button">
+                DOWNLOAD CV 
+            </a>
         </div>
         <div class="hero-photo-container">
             <img src="Photoroom-20250119_000427.png" alt="Khyla Albaracin Professional Photo">
@@ -373,7 +360,7 @@
         <h2>ABOUT ME</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>As a hardworking 2nd-year Information Technology student at CPSU-Moises Padilla Campus, I am always eager to deepen my knowledge in web development and software tools. I am committed to advancing my practical skills, especially in areas like HTML and database management, to prepare for a successful career.</p>
+                <p>As a hardworking 2nd-year Information Technology student at CPSU-Moises Padilla Campus, I am always eager to deepen my knowledge in web development and software tools. I am committed to advancing my practical skills, especially in areas like HTML and database management, to prepare for a successful career. This drive fuels my dedication to consistently seek out new projects and opportunities for growth in the tech field.</p>
             </div>
             <div class="about-details">
                 <h3>Educational Focus</h3>
@@ -381,6 +368,10 @@
                     <li>• Focusing on Web Development and Database Management.</li>
                     <li>• Passionate about Information Technology.</li>
                     <li>• Maintaining standing at CPSU-Moises Padilla Campus.</li>
+                </ul>
+                <h3>Personal Growth</h3>
+                <ul>
+                    <li>• Always seeking new opportunities to learn and collaborate on challenging projects to enhance practical skills.</li>
                 </ul>
             </div>
         </div>
@@ -391,15 +382,15 @@
         <div class="skills-grid">
             <div class="skill-card">
                 <h3>Web Basics</h3>
-                <p>Proficient in HTML5, CSS3, and foundational JavaScript.</p>
+                <p>Proficient in HTML5, CSS3, and foundational JavaScript for responsive website designs.</p>
             </div>
             <div class="skill-card">
                 <h3>Programming</h3>
-                <p>Familiar with basic concepts in JavaScript and C++.</p>
+                <p>Familiar with basic programming concepts in languages like JavaScript and C++.</p>
             </div>
             <div class="skill-card">
                 <h3>Software Tools</h3>
-                <p>Experienced with Microsoft Office Suite.</p>
+                <p>Experienced with Microsoft Office Suite (Word, Excel, PowerPoint).</p>
             </div>
         </div>
     </section>
@@ -421,34 +412,37 @@
             </div>
         </div>
     </section>
-
+    
     <section class="main-section" id="hobbies">
         <h2>HOBBIES</h2>
         <div class="hobbies-grid"> 
             <div class="hobby-card">
                 <h3>Baking 🧁</h3>
-                <img src="1761394343182.jpg" loading="lazy">
-                <p>I find joy in the process of baking. It's my go-to stress reliever.</p>
+                <img src="1761394343182.jpg" alt="Baking hobby" loading="lazy">
+                <p>I find joy in the process of baking, from measuring ingredients to the smell of fresh bread or cookies coming out of the oven. It's my go-to stress reliever.</p>
             </div>
             <div class="hobby-card">
                 <h3>Singing 🎤</h3>
-                <img src="Photoroom-20240702_150519.png" loading="lazy">
-                <p>Singing is a passion that allows me to express myself deeply.</p>
+                <img src="Photoroom-20240702_150519.png" alt="Singing hobby" loading="lazy">
+                <p>Whether in a choir or just casually at home, singing is a passion that allows me to express myself and appreciate music deeply.</p>
             </div>
             <div class="hobby-card">
                 <h3>Exploring 🤠</h3>
-                <img src="1712671418129.jpg" loading="lazy">
-                <p>I love going to new places and feeling the joy of new adventures.</p>
+                <img src="1712671418129.jpg" alt="Exploring hobby" loading="lazy">
+                <p>Exploring different to go is a hobby. I love going to new places feel the joy whenever we do rides.</p>
             </div>
         </div>
     </section>
-
+    
     <section class="main-section" id="contact">
         <h2>CONTACT ME</h2>
         <div class="contact-details">
+            <p>I'm always open to new projects, collaborations, or just a friendly chat. You can reach me directly via:</p>
             <p>Email: <a href="mailto:khylaalbaracin1@gmail.com">khylaalbaracin1@gmail.com</a> </p>
             <p>Phone: 09633259661</p>
         </div>
+
+        <h2 style="text-align: center; margin-top: 80px; color: #2c3e50;">Send Me a Message</h2>
         <form action="#" method="POST" class="contact-form-table">
             <table class="message-table">
                 <tr>
@@ -458,6 +452,10 @@
                 <tr>
                     <td><label for="email">Your Email:</label></td>
                     <td><input type="email" id="email" name="email" required></td>
+                </tr>
+                <tr>
+                    <td><label for="subject">Subject:</label></td>
+                    <td><input type="text" id="subject" name="subject"></td>
                 </tr>
                 <tr>
                     <td><label for="message">Message:</label></td>
@@ -473,74 +471,76 @@
     </section>
 
     <div id="chat-widget">
-        <div id="chat-window">
-            <div id="chat-header">
-                <span>Khyla's Assistant</span>
-                <span style="cursor:pointer" onclick="toggleChat()">×</span>
-            </div>
+        <div id="chat-header" onclick="toggleChat()">
+            <span>Khyla's AI Assistant</span>
+            <span id="toggle-icon">+</span>
+        </div>
+        <div id="chat-body">
             <div id="chat-messages">
-                <div class="msg bot-msg">Hi there! I'm Khyla's AI assistant. Ask me anything about her skills, hobbies, or education!</div>
+                <div class="msg bot-msg">Hi! I'm Khyla's AI. Ask me anything about her skills, projects, or hobbies!</div>
             </div>
             <div id="chat-input-area">
-                <input type="text" id="chat-input" placeholder="Ask about Khyla...">
-                <button id="chat-send">Send</button>
+                <input type="text" id="user-input" placeholder="Type here..." onkeypress="handleKey(event)">
+                <button onclick="sendMessage()">Send</button>
             </div>
         </div>
-        <button id="chat-button" onclick="toggleChat()">💬</button>
     </div>
 
     <script>
-        const chatWindow = document.getElementById('chat-window');
-        const chatInput = document.getElementById('chat-input');
-        const chatMessages = document.getElementById('chat-messages');
-        const sendBtn = document.getElementById('chat-send');
-
         function toggleChat() {
-            chatWindow.style.display = (chatWindow.style.display === 'flex') ? 'none' : 'flex';
+            const body = document.getElementById('chat-body');
+            const icon = document.getElementById('toggle-icon');
+            if (body.style.display === 'flex') {
+                body.style.display = 'none';
+                icon.innerText = '+';
+            } else {
+                body.style.display = 'flex';
+                icon.innerText = '-';
+            }
         }
 
-        function addMessage(text, sender) {
+        function handleKey(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+
+        function sendMessage() {
+            const input = document.getElementById('user-input');
+            const text = input.value.trim().toLowerCase();
+            if (!text) return;
+
+            addMessage(input.value, 'user-msg');
+            input.value = '';
+
+            // AI LOGIC
+            let response = "I'm sorry, I'm only trained to talk about Khyla and this website. Try asking about her skills, school, or hobbies!";
+
+            if (text.includes('khyla') || text.includes('who is she')) {
+                response = "Khyla Albaracin is a 2nd-year BSIT student at CPSU-Moises Padilla Campus. She is passionate about tech and web development!";
+            } else if (text.includes('skill') || text.includes('what can she do')) {
+                response = "Khyla is proficient in HTML5, CSS3, basic JavaScript, and C++. She's also an expert in Microsoft Office Suite.";
+            } else if (text.includes('hobby') || text.includes('hobbies') || text.includes('free time')) {
+                response = "Khyla loves baking (it's her stress reliever!), singing, and exploring new places and rides!";
+            } else if (text.includes('school') || text.includes('education') || text.includes('college')) {
+                response = "She is currently studying Information Technology at Central Philippines State University (CPSU), Moises Padilla Campus.";
+            } else if (text.includes('contact') || text.includes('email') || text.includes('phone')) {
+                response = "You can contact Khyla via email at khylaalbaracin1@gmail.com or call her at 09633259661.";
+            } else if (text.includes('project') || text.includes('tutorial')) {
+                response = "Khyla has created video tutorials for TimeTune Scheduler, Canva, and PowerPoint. You can find them in the Projects section!";
+            } else if (text.includes('hello') || text.includes('hi')) {
+                response = "Hello! How can I help you learn more about Khyla today?";
+            }
+
+            setTimeout(() => addMessage(response, 'bot-msg'), 500);
+        }
+
+        function addMessage(text, className) {
+            const container = document.getElementById('chat-messages');
             const div = document.createElement('div');
-            div.className = `msg ${sender}-msg`;
+            div.className = 'msg ' + className;
             div.innerText = text;
-            chatMessages.appendChild(div);
-            chatMessages.scrollTop = chatMessages.scrollHeight;
+            container.appendChild(div);
+            container.scrollTop = container.scrollHeight;
         }
-
-        function handleBotResponse(userInput) {
-            const input = userInput.toLowerCase();
-            let response = "I'm not sure about that. Try asking about her skills, school, or hobbies!";
-
-            if (input.includes("hi") || input.includes("hello")) {
-                response = "Hello! I am the portfolio assistant. How can I help you learn more about Khyla?";
-            } else if (input.includes("skill") || input.includes("can she do")) {
-                response = "Khyla is proficient in HTML5, CSS3, and basic JavaScript. she also knows C++ and Microsoft Office Tools!";
-            } else if (input.includes("hobby") || input.includes("hobbies") || input.includes("likes")) {
-                response = "Khyla loves baking 🧁, singing 🎤, and exploring new places 🤠!";
-            } else if (input.includes("school") || input.includes("study") || input.includes("education")) {
-                response = "She is a 2nd-year BSIT student at CPSU-Moises Padilla Campus.";
-            } else if (input.includes("contact") || input.includes("email") || input.includes("phone")) {
-                response = "You can email her at khylaalbaracin1@gmail.com or call 09633259661.";
-            } else if (input.includes("who are you")) {
-                response = "I am an AI logic bot designed to answer questions specifically about this portfolio website.";
-            }
-
-            setTimeout(() => addMessage(response, 'bot'), 500);
-        }
-
-        sendBtn.addEventListener('click', () => {
-            const text = chatInput.value.trim();
-            if (text) {
-                addMessage(text, 'user');
-                chatInput.value = '';
-                handleBotResponse(text);
-            }
-        });
-
-        chatInput.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter') sendBtn.click();
-        });
     </script>
-
 </body>
 </html>
